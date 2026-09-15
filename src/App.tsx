@@ -13,8 +13,10 @@ import { RoadmapPage } from './pages/RoadmapPage'
 import { VideoPlayerPage } from './pages/VideoPlayerPage'
 
 export default function App() {
+  const basename = import.meta.env.BASE_URL === '/' ? undefined : import.meta.env.BASE_URL.replace(/\/$/, '')
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <AppShell>
         <Routes>
           <Route path="/" element={<LandingPage />} />
